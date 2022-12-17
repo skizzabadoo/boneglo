@@ -4,6 +4,178 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bone Glo</title>
+    <!-- custom card css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap');
+      body {
+      background: #DFC2F2;
+        background-image: linear-gradient( to right, #ffffb3,#ffe6e6);
+        background-attachment: fixed;	
+        background-size: cover;
+      }
+
+      #container{
+        box-shadow: 0 15px 30px 1px grey;
+        background: rgba(255, 255, 255, 0.90);
+        text-align: left;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 5em auto;
+        /* height: 350px; */
+        width: 700px;
+      }
+
+      .product-details {
+        position: relative;
+        text-align: left;
+        overflow: hidden;
+        padding: 30px;
+        height: 100%;
+        float: left;
+        width: 40%;
+      }
+
+      #container .product-details h1{
+        font-family: 'Bebas Neue', cursive;
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        color: #344055;
+        margin: 0;
+      }
+
+      #container .product-details h1:before{
+        position: absolute;
+        content: '';
+        right: 0%; 
+        top: 0%;
+        transform: translate(25px, -15px);
+        font-family: 'Bree Serif', serif;
+        display: inline-block;
+        background: #ffe6e6;
+        border-radius: 5px;
+        font-size: 14px;
+        padding: 5px;
+        color: white;
+        margin: 0;
+        animation: chan-sh 6s ease infinite;
+      }
+
+      .hint-star {
+        display: inline-block;
+        margin-left: 0.5em;
+        color: gold;
+        width: 50%;
+      }
+
+      #container .product-details > p {
+        font-family: 'EB Garamond', serif;
+        text-align: left;
+        font-size: 18px;
+        color: #7d7d7d;
+      }
+
+      .control{
+        position: absolute;
+        bottom: 20%;
+        left: 22.8%;
+      }
+
+      .btn {
+        transform: translateY(0px);
+        transition: 0.3s linear;
+        background:  #809fff;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        color: #eee;
+        padding: 0;
+        margin: 0;
+      }
+
+      .btn:hover{transform: translateY(-6px);
+        background: #1a66ff;}
+
+      .btn span {
+        font-family: 'Farsan', cursive;
+        transition: transform 0.3s;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        margin:0;
+      }
+      .btn .price, .shopping-cart{
+        background: #333;
+        border: 0;
+        margin: 0;
+      }
+
+      .btn .price {
+        transform: translateX(-10%); padding-right: 15px;
+      }
+
+      .btn .shopping-cart {
+        transform: translateX(-100%);
+        position: absolute;
+        background: #333;
+        z-index: 1;
+        left: 0;
+        top: 0;
+      }
+
+      .btn .buy {z-index: 3; font-weight: bolder;}
+
+      .btn:hover .price {transform: translateX(-110%);}
+
+      .btn:hover .shopping-cart {transform: translateX(0%);}
+
+
+
+      .product-image {
+        transition: all 0.3s ease-out;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        height: 70%;
+        float: right;
+        width: 45%;
+        display: inline-block;
+      }
+
+      #container img {width: 100%;height: 100%;}
+
+      .info {
+          background: rgba(27, 26, 26, 0.9);
+          font-family: 'Bree Serif', serif;
+          transition: all 0.3s ease-out;
+          transform: translateX(-100%);
+          position: absolute;
+          line-height: 1.8;
+          text-align: left;
+          font-size: 105%;
+          cursor: no-drop;
+          color: #FFF;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+      }
+
+      .info h2 {text-align: center}
+      .product-image:hover .info{transform: translateX(0);}
+
+      .info ul li{transition: 0.3s ease;}
+      .info ul li:hover{transform: translateX(50px) scale(1.3);}
+
+      .product-image:hover img {transition: all 0.3s ease-out;}
+      .product-image:hover img {transform: scale(1.2, 1.2);}
+    </style>
+    <!-- end custom card css  -->
+
     <style>
       @font-face { font-family: boneglo; src: url(".\\Fonts\\Herborn.ttf"); } 
       h0, a {
@@ -60,175 +232,275 @@
       </nav>
       <!-- nav bar end -->
 
-    <ul>
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\store\coming soon.jpg" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Bone Glo</h5>
-                  <p class="card-text">The original. There are no substitutes. There are no peers. There is only Bone Glo</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 years ago</small></p>
-                </div>
-              </div>
-            </div>
+      <!-- Bone Glo card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Bone Glo</h0>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+            There are no substitutes. There are no peers. There is only Bone Glo!<br>
+            Chad Renroth - Founder
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\store\coming soon.jpg" alt="">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+              <li>The Original</li>
+              <li>Non-Habit Forming</li>
+              <li>Certified 63% Vegan</li>
+              <li>It's a Lifestyle</li>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Bone Glo card  -->
 
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\store\Bone Glu.png" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Bone Glu</h5>
-                  <p class="card-text">We hope you never need it, but when you do, we have it!</p>
-                  <p class="card-text"><small class="text-muted">Last updated 1 week ago</small></p>
-                </div>
-              </div>
-            </div>
+
+      <!-- Bone Glu card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Bone Glu</h0><br>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+            It's like an epi-pen. I hope I never need to use it, but it might just save
+            your life one day. I put one in every emergency kit. 
+            <br><br>
+            - Tonya in Columbus
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\store\Bone Glu.png" alt="" height="10">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+              <li>We hope you never need it, but when you do, we have it!</li>
+              <li>3oz bottle (perfect for carry-on luggage)</li>
+              <li>Stock up now, you never know when you'll need it</li>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Bone Glu card  -->
 
-
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\store\Men's Shirt.png" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Men's Shirts</h5>
-                  <p class="card-text"></p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
+      <!-- Men's Shirt card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Men's Shirts</h0><br>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+            I found mine at the local thrift store! I couldn't believe it, it's just such 
+            a versatile piece. I wear mine everywhere.<br>
+            - Mike in Chicago
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\store\Men's Shirt.png" alt="" height="10">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+              <li>Perfect for any occasion!</li>
+              <ul>
+                <li>Weddings</li>
+                <li>Family Photos</li>
+                <li>Professional Wrestling</li>
+                <li>Grade School Band Concerts</li>
+              </ul>
+              <li>Made from 14% Bones</li>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Men's Shirt card  -->
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\store\Women's Shirt.png" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Women's Shirts</h5>
-                  <p class="card-text"></p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
+      <!-- Women's Shirts card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Women's Shirts</h0><br>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\store\Women's Shirt.png" alt="" height="10">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Women's Shirts card  -->
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\store\Bone Glo for Kids.png" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Kid's Shirts</h5>
-                  <p class="card-text"></p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
+      <!-- Bone Glo for Kids card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Bone Glo for Kids</h0><br>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\store\Bone Glo for Kids.png" alt="" height="10">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Bone Glo for Kids card  -->
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\store\Knit Hat.png" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Hats</h5>
-                  <p class="card-text"></p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
+      <!-- Hats card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Hats</h0><br>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\store\Knit Hat.png" alt="" height="10">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Hats card  -->
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\store\Coffee Mug.png" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Coffee Mugs</h5>
-                  <p class="card-text">Made from 100% recycled Bone Glo!</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
+      <!-- Coffee Mugs card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Coffee Mugs</h0><br>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\store\Coffee Mug.png" alt="" height="10">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Coffee Mugs card  -->
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\store\Belt Buckle.png" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Belt Buckles</h5>
-                  <p class="card-text">Made from 100% Bone Glo Coffee Mugs!</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
+      <!-- Belt Buckles card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Belt Buckles</h0><br>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\store\Belt Buckle.png" alt="" height="10">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Belt Buckles card  -->
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\store\Car Decal.png" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Car Decals</h5>
-                  <p class="card-text">It's like a Henna tattoo for your car!</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
+      <!-- Car Decals card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Car Decals</h0><br>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\store\Car Decal.png" alt="" height="10">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Car Decals card  -->
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\store\Henna Tattoo.png" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Henna Tattoos</h5>
-                  <p class="card-text">It's like a car decal for your skin!</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
+      <!-- Henna Tattoos card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Henna Tattoos</h0><br>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\store\Henna Tattoo.png" alt="" height="10">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Henna Tattoos card  -->
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src=".\images\Bone Glo Logo on Navy Background.png" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Lifestyle Accessories</h5>
-                  <p class="card-text"></p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
+      <!-- Lifestyle Accessories card  -->
+      <div id="container">	
+        <div class="product-details">
+          <h0>Lifestyle Accessories</h0><br>
+          <span class="hint-star star">
+            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <p class="information">
+          </p>
+        </div>
+          
+        <div class="product-image">
+          <img src=".\images\Bone Glo Logo on Navy Background.png" alt="" height="10">
+          <div class="info">
+            <h2> Description</h2>
+            <ul>
+            </ul>
           </div>
+        </div>
+      </div>
+      <!-- end Lifestyle Accessories card  -->
 
 
-    </ul>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <script>
@@ -243,7 +515,7 @@
           var cartqty = parseInt(cart.innerHTML);
           cartqty += 1;
           cart.innerHTML = cartqty;
-          await sleep((Math.random() * 100) + 2000);
+          await sleep((Math.random() * 2000));
         }
 
       }
